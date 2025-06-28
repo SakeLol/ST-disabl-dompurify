@@ -1,0 +1,132 @@
+<div id="stamc--settings">
+	<div class="inline-drawer">
+		<div class="inline-drawer-toggle inline-drawer-header">
+			<b>Alternative Markdown Converter</b>
+			<div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+		</div>
+		<div class="inline-drawer-content" style="font-size:small;">
+            <div class="flex-container">
+                <p>
+                    Changes are only immediately applied to chat messages.<br>
+                    To update any other converted markdown text, reload the page or do something to re-convert that text.
+                </p>
+            </div>
+			<div class="flex-container">
+				<label>
+                    <span class="stamc--text">
+                        Markdown Converter:
+                    </span>
+                    <select id="stamc--converter">
+                        <option value="showdown">ShowdownJS (Vanilla SillyTavern)</option>
+                        <option value="marked">Marked</option>
+                        <option value="micromark">micromark</option>
+                    </select>
+				</label>
+            </div>
+			<div class="flex-container">
+                <label class="checkbox_label">
+                    <input id="stamc--onlyConverter" type="checkbox">
+                    <span class="stamc--text">
+                        Only use converter
+                        <br>
+                        <small>Only switch markdown converters without extra features</small>
+                    </span>
+				</label>
+            </div>
+
+            <hr>
+
+            <div class="flex-container">
+                <strong>Extras</strong>
+            </div>
+
+			<div class="flex-container">
+				<label class="checkbox_label">
+                    <input id="stamc--blockquotes" type="checkbox">
+                    <span class="stamc--text">
+                        Blockquotes copy button
+                        <br>
+                        <small>Add copy button to blockquotes</small>
+                    </span>
+				</label>
+            </div>
+			<div class="flex-container">
+				<label class="checkbox_label">
+                    <input id="stamc--customTags" type="checkbox">
+                    <span class="stamc--text">
+                        Highlight custom tags
+                        <br>
+                        <small>Add markers to highlight start and end of custom tag blocks</small>
+                    </span>
+				</label>
+            </div>
+			<div class="flex-container">
+				<label class="checkbox_label">
+                    <input id="stamc--closeTags" type="checkbox">
+                    <span class="stamc--text">
+                        Close tags
+                        <br>
+                        <small>Attempt to close unclosed tags</small>
+                    </span>
+				</label>
+			</div>
+			<div class="flex-container">
+				<label class="checkbox_label">
+                    <input id="stamc--fixLists" type="checkbox">
+                    <span class="stamc--text">
+                        Fix lists
+                        <br>
+                        <small>Attempt to prevent regular text following a list being gobbled up by the preceding list</small>
+                    </span>
+				</label>
+			</div>
+			<div class="flex-container">
+				<label class="checkbox_label">
+                    <input id="stamc--fixHr" type="checkbox">
+                    <span class="stamc--text">
+                        Fix horizontal rules
+                        <br>
+                        <small>Add a linebreak before a line consisting of only three (or more) dashes to prevent that line turning the preceding line into a heading</small>
+                    </span>
+				</label>
+			</div>
+
+            <hr>
+
+            <div class="flex-container">
+                <strong>Streaming (experimental and hacky)</strong>
+            </div>
+
+			<div class="flex-container">
+				<label class="checkbox_label">
+                    <input id="stamc--fadeParagraphs" type="checkbox">
+                    <span class="stamc--text">
+                        Fade-in paragraphs
+                        <br>
+                        <small>When streaming a response, fade in each paragraph one by one instead of having every token appear as it is generated and received</small>
+                    </span>
+				</label>
+			</div>
+			<div class="flex-container">
+				<label class="checkbox_label">
+                    <input id="stamc--fadeParagraphsPlaceholder" type="checkbox">
+                    <span class="stamc--text">
+                        Show placeholder for fade-in paragraphs
+                        <br>
+                        <small>Show a stylized placeholder for the next paragraph that is still being generated</small>
+                    </span>
+				</label>
+			</div>
+			<div class="flex-container">
+				<label class="checkbox_label">
+                    <input id="stamc--morphdom" type="checkbox">
+                    <span class="stamc--text">
+                        Use morphdom
+                        <br>
+                        <small>When streaming a response, don't replace the entire message on every streaming tick</small>
+                    </span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>

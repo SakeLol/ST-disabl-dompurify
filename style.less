@@ -1,0 +1,183 @@
+// blockquote copy buttons
+.custom-stamc--blockquote {
+    position: relative;
+    padding-right: calc(1.25em + 20px);
+    .custom-stamc--copy {
+        cursor: pointer;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        margin: 0;
+        transition: 200ms;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+        &.custom-stamc--success {
+            background-color: rgb(81, 163, 81);
+            opacity: 1;
+        }
+        &.custom-stamc--failure {
+            background-color: rgb(189, 54, 47);
+            opacity: 1;
+        }
+    }
+}
+
+// highlight custom tags
+.custom-stamc--custom {
+    border: 0.1px solid transparent;
+    transition: 200ms;
+    position: relative;
+    &:hover {
+        // background-color: rgb(from var(--SmartThemeQuoteColor) r g b / 0.125);
+        > .custom-stamc--tag, > .custom-stamc--tag-close {
+            &::after {
+                opacity: 0.9;
+            }
+        }
+    }
+    .custom-stamc--tag {
+        pointer-events: none;
+        float: right;
+        position: sticky;
+        height: 0;
+        width: 100%;
+        top: 2em;
+        &::after {
+            content: "<"attr(data-tag)">";
+            position: absolute;
+            top: -1.2em;
+            right: -0.4em;
+            font-size: 0.6em;
+            line-height: 1;
+            border-radius: 5px;
+            background: var(--SmartThemeChatTintColor);
+            color: var(--SmartThemeQuoteColor);
+            padding: 0.4em;
+            opacity: 0.25;
+            cursor: default;
+            transition: 200ms;
+        }
+    }
+    .custom-stamc--tag-close {
+        pointer-events: none;
+        float: right;
+        height: 0;
+        width: 100%;
+        position: relative;
+        &::after {
+            content: "</"attr(data-tag)">";
+            position: absolute;
+            bottom: 0;
+            right: -0.4em;
+            font-size: 0.6em;
+            line-height: 1;
+            border-radius: 5px;
+            background: var(--SmartThemeChatTintColor);
+            color: var(--SmartThemeQuoteColor);
+            padding: 0.4em;
+            opacity: 0.25;
+            cursor: default;
+            transition: 200ms;
+        }
+    }
+}
+
+// github flavoured task lists
+.mes_text ul > li:has(> input[type="checkbox"]) {
+    display: flex;
+    gap: 0.5em;
+    align-items: baseline;
+    margin-left: -1em;
+}
+
+
+#stamc--settings {
+    hr {
+        display: block;
+    }
+}
+
+
+//! paragraph fade-in
+@keyframes stamc--fade-in {
+    from {
+        opacity: 0;
+        mask: linear-gradient(to bottom, black, black 0%, transparent 100%);
+    }
+    to {
+        opacity: 1;
+        mask: linear-gradient(to bottom, black, black 100%, transparent 100%);
+    }
+}
+@keyframes stamc--shimmer {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
+}
+.mes_text.stamc--isStreaming {
+    .stamc--lastBlock, .custom-stamc--lastBlock {
+        opacity: 0;
+        animation: stamc--fade-in 1s ease-in-out forwards;
+    }
+    .custom-stamc--placeholder {
+        .custom-stamc--line {
+            height: 1.05em;
+            margin-bottom: 0.5em;
+            opacity: 0.25;
+            background-image: linear-gradient(
+                90deg,
+                var(--SmartThemeEmColor) 0%,
+                var(--SmartThemeBodyColor) 50%,
+                var(--SmartThemeEmColor) 100%
+            );
+            background-size: 200% 100%;
+            border-radius: 4px;
+            animation: stamc--shimmer 1.8s infinite linear;
+
+            &:nth-child(1) {
+                animation-delay: 400ms;
+            }
+            &:nth-child(2) {
+                animation-delay: 0ms;
+            }
+            &:nth-child(3) {
+                animation-delay: 1200ms;
+            }
+            &:nth-child(4) {
+                animation-delay: 800ms;
+            }
+            &.custom-stamc--firstline-1 {
+                width: 95%;
+            }
+            &.custom-stamc--firstline-2 {
+                width: 93%;
+            }
+            &.custom-stamc--firstline-3 {
+                width: 90%;
+            }
+            &.custom-stamc--line-1 {
+                width: 85%;
+            }
+            &.custom-stamc--line-2 {
+                width: 83%;
+            }
+            &.custom-stamc--line-3 {
+                width: 80%;
+            }
+            &.custom-stamc--lastline-1 {
+                width: 75%;
+            }
+            &.custom-stamc--lastline-2 {
+                width: 73%;
+            }
+            &.custom-stamc--lastline-3 {
+                width: 70%;
+            }
+        }
+    }
+}

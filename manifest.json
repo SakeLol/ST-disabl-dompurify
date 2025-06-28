@@ -1,0 +1,11 @@
+{
+    "display_name": "Alternative Markdown Converter",
+    "loading_order": 100,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "LenAnderson",
+    "version": "1.7.0",
+    "homePage": "https://github.com/LenAnderson/SillyTavern-AlternativeMarkdownConverter"
+}
