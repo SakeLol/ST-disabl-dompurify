@@ -115,7 +115,7 @@ export class Settings {
             fixHr: this.fixHr,
             fadeParagraphs: this.fadeParagraphs,
             morphdom: this.morphdom,
-			disableDOMPurify: this.disableDOMPurify;
+            disableDOMPurify: this.disableDOMPurify,
         };
     }
 
