@@ -122,7 +122,7 @@ export class Settings {
 
     async render() {
         if (document.querySelector('#stamc--settings')) return;
-        const url = '/scripts/extensions/third-party/SillyTavern-AlternativeMarkdownConverter/html/settings.html';
+        const url = '/scripts/extensions/third-party/ST-disabl-dompurify/html/settings.html';
         const response = await fetch(url);
         if (!response.ok) {
             return console.warn('failed to fetch template:', url);
