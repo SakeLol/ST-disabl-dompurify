@@ -1,5 +1,5 @@
 {
-    "display_name": "Alternative Markdown Converter",
+    "display_name": "Alternative Markdown Converter (DOMPURIFY Disbale VER)",
     "loading_order": 100,
     "requires": [],
     "optional": [],
