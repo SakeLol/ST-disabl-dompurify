@@ -20,13 +20,6 @@ settings.onStatusChange = ()=>{
 };
 const handleSettingsChange = ()=>{
     saveSettingsDebounced();
-	if (settings.disableDOMPurify) {
-		DOMPurify.backup_sanitize = DOMPurify.sanitize;
-		DOMPurify.sanitize = (x) => x;
-	} else {
-		DOMPurify.sanitize = DOMPurify.backup_sanitize;
-	}
-	
     for (const mesElement of /**@type {HTMLElement[]} */([...document.querySelectorAll('#chat .mes')])) {
         const mesId = parseInt(mesElement.getAttribute('mesid'));
         const mes = chat[mesId];
@@ -126,6 +119,13 @@ const enable = ()=>{
             if (settings.onlyConverter) {
                 return this.convert(md);
             }
+			
+			if (settings.disableDOMPurify) {
+				DOMPurify.backup_sanitize = DOMPurify.sanitize;
+				DOMPurify.sanitize = (x) => x;
+			} else {
+				DOMPurify.sanitize = DOMPurify.backup_sanitize;
+			}
 			
 			
 			
