@@ -104,11 +104,7 @@ const enable = ()=>{
                     return marked.parse(md);
                 }
                 case 'micromark': {
-                    return micromark(md, {
-                        allowDangerousHtml: true,
-                        extensions: [gfm()],
-                        htmlExtensions: [gfmHtml()],
-                    });
+                    return md;
                 }
                 case 'showdown': {
                     return this.showdownConverter.makeHtml(md);
