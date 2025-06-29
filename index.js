@@ -119,9 +119,9 @@ const enable = ()=>{
             if (settings.onlyConverter) {
                 return this.convert(md);
             }
+			DOMPurify.backup_sanitize = DOMPurify.sanitize;
 			
 			if (settings.disableDOMPurify) {
-				DOMPurify.backup_sanitize = DOMPurify.sanitize;
 				DOMPurify.sanitize = (x) => x;
 			} else {
 				DOMPurify.sanitize = DOMPurify.backup_sanitize;
